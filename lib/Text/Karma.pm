@@ -3,7 +3,7 @@ BEGIN {
   $Text::Karma::AUTHORITY = 'cpan:HINRIK';
 }
 BEGIN {
-  $Text::Karma::VERSION = '0.01';
+  $Text::Karma::VERSION = '0.02';
 }
 
 use 5.010;

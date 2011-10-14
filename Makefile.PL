@@ -29,7 +29,7 @@ my %WriteMakefileArgs = (
     'MouseX::StrictConstructor' => '0.02',
     'namespace::clean' => '0.20'
   },
-  'VERSION' => '0.01',
+  'VERSION' => '0.02',
   'test' => {
     'TESTS' => 't/*.t'
   }
