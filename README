@@ -46,6 +46,15 @@ METHODS
     'self_karma', whether to allow people to affect their own karma.
     Optional. Defaults to false.
 
+    The return value will be an arrayref containing a hashref for each karma
+    operation. They will have the following keys:
+
+    'subject', the subject of the karma operation (e.g. 'foo' in 'foo++').
+
+    'op', the karma operation (0 if it was '--', 1 if it was '++').
+
+    'comment', a potential comment for the karma change.
+
   "get_karma"
     This method returns the karma for a given subject from the database.
     Takes one argument, a subject to look up. If the subject is unknown,
@@ -65,8 +74,8 @@ AUTHOR
 
 CONTACT
   Email
-    You can email the authors of this module at <APOCAL@cpan.org> or
-    "hinrik.sig@gmail.com" asking for help with any problems you have.
+    You can email the authors of this module at "hinrik.sig@gmail.com" or
+    "APOCAL@cpan.org" asking for help with any problems you have.
 
   Internet Relay Chat
     You can get live help by using IRC (Internet Relay Chat). If you don't
@@ -78,17 +87,17 @@ CONTACT
     *   MAGnet
 
         You can connect to the server at 'irc.perl.org', join the
-        "#perl-help" channel, and talk to ""Apocalypse> or "Hinrik"
+        "#perl-help" channel, and talk to "Hinrik" or "Apocalypse".
 
     *   FreeNode
 
         You can connect to the server at 'irc.freenode.net', join the
-        "#perl" channel, and talk to ""Apocal> or "literal"
+        "#perl" channel, and talk to "literal" or "Apocal".
 
     *   EFnet
 
         You can connect to the server at 'irc.efnet.org', join the "#perl"
-        channel, and talk to ""Ap0cal> or "Hinrik"
+        channel, and talk to "Hinrik" or "Ap0cal".
 
 LICENSE AND COPYRIGHT
     Copyright 2011 Hinrik Örn Sigurðsson and Apocalypse

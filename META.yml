@@ -34,5 +34,5 @@ resources:
   homepage: http://metacpan.org/release/Text-Karma
   license: http://dev.perl.org/licenses/
   repository: git://github.com/hinrik/text-karma.git
-version: 0.02
+version: 0.03
 x_authority: cpan:HINRIK

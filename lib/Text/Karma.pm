@@ -3,7 +3,7 @@ BEGIN {
   $Text::Karma::AUTHORITY = 'cpan:HINRIK';
 }
 BEGIN {
-  $Text::Karma::VERSION = '0.02';
+  $Text::Karma::VERSION = '0.03';
 }
 
 use 5.010;
@@ -104,7 +104,7 @@ sub process_karma {
 
     # get the list of karma matches
     my @matches = $args{str} =~ /(\([^\)]+\)|\S+)(\+\+|--)\s*(\#.+)?/g;
-    my @karmas;
+    my @changes;
     if (@matches) {
         while (my ($subject, $op, $comment) = splice @matches, 0, 3) {
             # clean the karma of spaces and () as we had to capture them
@@ -119,31 +119,26 @@ sub process_karma {
             else {
                 # clean the comment
                 $comment =~ s/^\s*\#\s*// if defined $comment;
+                $op = $op eq '++' ? 1 : 0;
+                my $time = time;
 
-                my $karma = {
-                    who       => $args{who},
-                    where     => $args{where},
-                    timestamp => scalar time,
-                    subject   => $subject,
-                    op        => ($op eq '++' ? 1 : 0),
-                    comment   => $comment,
-                    str       => $args{str},
+                push @changes, {
+                    subject => $subject,
+                    op      => $op,
+                    comment => $comment,
                 };
 
-                push @karmas, $karma;
                 if ($self->dbh) {
                     my $sth = $self->_sth_add_karma;
                     $sth->execute(
-                        @{ $karma }{
-                            qw(who where timestamp subject op comment str)
-                        }
+                        $args{who}, $args{where}, $time, $subject, $op, $comment, $args{str},
                     ) or die $sth->errstr;
                 }
             }
         }
     }
 
-    return \@karmas;
+    return \@changes;
 }
 
 sub get_karma {
@@ -230,6 +225,15 @@ B<'str'>, the text that the person wrote. Required.
 B<'self_karma'>, whether to allow people to affect their own karma. Optional.
 Defaults to false.
 
+The return value will be an arrayref containing a hashref for each karma
+operation. They will have the following keys:
+
+B<'subject'>, the subject of the karma operation (e.g. 'foo' in 'foo++').
+
+B<'op'>, the karma operation (0 if it was '--', 1 if it was '++').
+
+B<'comment'>, a potential comment for the karma change.
+
 =head2 C<get_karma>
 
 This method returns the karma for a given subject from the database. Takes
@@ -252,8 +256,8 @@ Apocalypse <APOCAL@cpan.org>
 
 =head2 Email
 
-You can email the authors of this module at <APOCAL@cpan.org> or
-C<hinrik.sig@gmail.com> asking for help with any problems you have.
+You can email the authors of this module at C<hinrik.sig@gmail.com>
+or C<APOCAL@cpan.org> asking for help with any problems you have.
 
 =head2 Internet Relay Chat
 
@@ -268,17 +272,17 @@ join the following networks/channels and get help:
 =item * MAGnet
 
 You can connect to the server at 'irc.perl.org', join the C<#perl-help>
-channel, and talk to C<>Apocalypse> or C<Hinrik>
+channel, and talk to C<Hinrik> or C<Apocalypse>.
 
 =item * FreeNode
 
 You can connect to the server at 'irc.freenode.net', join the C<#perl>
-channel, and talk to C<>Apocal> or C<literal>
+channel, and talk to C<literal> or C<Apocal>.
 
 =item * EFnet
 
 You can connect to the server at 'irc.efnet.org', join the C<#perl>
-channel, and talk to C<>Ap0cal> or C<Hinrik>
+channel, and talk to C<Hinrik> or C<Ap0cal>.
 
 =back
 
