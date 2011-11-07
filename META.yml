@@ -8,7 +8,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200006, CPAN::Meta::Converter version 2.110440'
+generated_by: 'Dist::Zilla version 4.300002, CPAN::Meta::Converter version 2.110930'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -31,8 +31,8 @@ requires:
   perl: 5.010
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Text-Karma
-  homepage: http://metacpan.org/release/Text-Karma
+  homepage: http://search.cpan.org/dist/Text-Karma/
   license: http://dev.perl.org/licenses/
   repository: git://github.com/hinrik/text-karma.git
-version: 0.04
+version: 0.05
 x_authority: cpan:HINRIK

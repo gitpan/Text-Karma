@@ -2,36 +2,36 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.010; }
+use 5.010;
 
 use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Process (and optionally store) karma points',
-  'AUTHOR' => 'Hinrik Örn Sigurðsson <hinrik.sig@gmail.com>, Apocalypse <APOCAL@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'Test::More' => '0.47'
+  "ABSTRACT" => "Process (and optionally store) karma points",
+  "AUTHOR" => "Hinrik \303\226rn Sigur\303\260sson <hinrik.sig\@gmail.com>, Apocalypse <APOCAL\@cpan.org>",
+  "BUILD_REQUIRES" => {
+    "Test::More" => "0.47"
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Text-Karma',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Text::Karma',
-  'PREREQ_PM' => {
-    'Any::Moose' => '0.15',
-    'Moose' => '2.0007',
-    'MooseX::StrictConstructor' => '0.16',
-    'Mouse' => '0.93',
-    'MouseX::StrictConstructor' => '0.02',
-    'namespace::clean' => '0.20'
+  "DISTNAME" => "Text-Karma",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Text::Karma",
+  "PREREQ_PM" => {
+    "Any::Moose" => "0.15",
+    "Moose" => "2.0007",
+    "MooseX::StrictConstructor" => "0.16",
+    "Mouse" => "0.93",
+    "MouseX::StrictConstructor" => "0.02",
+    "namespace::clean" => "0.20"
   },
-  'VERSION' => '0.04',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.05",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

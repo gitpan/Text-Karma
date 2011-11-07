@@ -5,7 +5,7 @@
       "Apocalypse <APOCAL@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200006, CPAN::Meta::Converter version 2.110440",
+   "generated_by" : "Dist::Zilla version 4.300002, CPAN::Meta::Converter version 2.110930",
    "license" : [
       "perl_5"
    ],
@@ -53,7 +53,7 @@
          "mailto" : "bug-Text-Karma@rt.cpan.org",
          "web" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Text-Karma"
       },
-      "homepage" : "http://metacpan.org/release/Text-Karma",
+      "homepage" : "http://search.cpan.org/dist/Text-Karma/",
       "license" : [
          "http://dev.perl.org/licenses/"
       ],
@@ -63,7 +63,7 @@
          "web" : "http://github.com/hinrik/text-karma"
       }
    },
-   "version" : "0.04",
+   "version" : "0.05",
    "x_authority" : "cpan:HINRIK"
 }
 

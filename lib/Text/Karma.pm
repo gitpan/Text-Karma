@@ -2,8 +2,8 @@ package Text::Karma;
 BEGIN {
   $Text::Karma::AUTHORITY = 'cpan:HINRIK';
 }
-BEGIN {
-  $Text::Karma::VERSION = '0.04';
+{
+  $Text::Karma::VERSION = '0.05';
 }
 
 use 5.010;
